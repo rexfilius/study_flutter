@@ -1,5 +1,6 @@
 # study_flutter
 
+## Shimmer Effect (Animation on a List)
 This project is like a library where I note every thing I learn as regards Flutter development.
 
 A branch will be created for every note.
