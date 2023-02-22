@@ -23,6 +23,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   final http.Client httpClient;
 
   PostBloc({required this.httpClient}) : super(const PostState()) {
+    // Passing a transformer to on<PostFetched> allows
+    // customization of how events are processed.
     on<PostFetched>(
       _onPostFetched,
       transformer: throttleDroppable(throttleDuration),
