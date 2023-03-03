@@ -1,14 +1,14 @@
 [
     {
-        "name": "Foo 1",
+        "name": "Foo 2",
         "age": 20
     },
     {
-        "name": "Bar 1",
+        "name": "Bar 2",
         "age": 30
     },
     {
-        "name": "Baz 1",
+        "name": "Baz 2",
         "age": 40
     }
 ]
