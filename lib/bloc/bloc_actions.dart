@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/util/extension.dart';
 
 @immutable
 abstract class LoadAction {
@@ -10,18 +11,4 @@ class LoadPersonsAction implements LoadAction {
   final PersonUrl url;
 
   const LoadPersonsAction({required this.url}) : super();
-}
-
-enum PersonUrl { person1, persons2 }
-
-extension UrlString on PersonUrl {
-  String get urlString {
-    switch (this) {
-      case PersonUrl.person1:
-        return "";
-
-      case PersonUrl.persons2:
-        return "";
-    }
-  }
 }
