@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          BlocBuilder<PersonsBloc, FetchResult?>(
+          BlocBuilder<PersonsBloc, FetchPerson?>(
             buildWhen: (previous, current) {
               return previous?.persons != current?.persons;
             },
