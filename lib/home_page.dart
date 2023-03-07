@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:study_flutter/bloc/bloc_actions.dart';
 import 'package:study_flutter/bloc/bloc_state.dart';
 import 'package:study_flutter/bloc/person_bloc.dart';
+import 'package:study_flutter/models/person.dart';
 import 'package:study_flutter/util/extension.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,17 +19,19 @@ class HomePage extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {
-                  context.read<PersonsBloc>().add(
-                        const LoadPersonsAction(url: PersonUrl.person1),
-                      );
+                  context.read<PersonsBloc>().add(const LoadPersonsAction(
+                        url: "",
+                        loader: getPersons,
+                      ));
                 },
                 child: const Text('Load Json #1'),
               ),
               TextButton(
                 onPressed: () {
-                  context.read<PersonsBloc>().add(
-                        const LoadPersonsAction(url: PersonUrl.persons2),
-                      );
+                  context.read<PersonsBloc>().add(const LoadPersonsAction(
+                        url: '',
+                        loader: getPersons,
+                      ));
                 },
                 child: const Text('Load Json #2'),
               ),

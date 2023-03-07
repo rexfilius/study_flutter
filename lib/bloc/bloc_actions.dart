@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/util/extension.dart';
+import 'package:study_flutter/models/person.dart';
+
+typedef PersonsLoader = Future<Iterable<Person>> Function(String url);
 
 @immutable
 abstract class LoadAction {
@@ -8,7 +10,11 @@ abstract class LoadAction {
 
 @immutable
 class LoadPersonsAction implements LoadAction {
-  final PersonUrl url;
+  final String url;
+  final PersonsLoader loader;
 
-  const LoadPersonsAction({required this.url}) : super();
+  const LoadPersonsAction({
+    required this.url,
+    required this.loader,
+  }) : super();
 }
