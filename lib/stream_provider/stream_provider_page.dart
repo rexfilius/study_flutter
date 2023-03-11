@@ -11,6 +11,9 @@ class StreamProviderPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(),
+      body: Column(),
+    );
   }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/pages/change_notifier_page.dart';
-import 'package:study_flutter/pages/future_provider_page.dart';
-import 'package:study_flutter/pages/provider_page.dart';
-import 'package:study_flutter/pages/state_notifier_page.dart';
-import 'package:study_flutter/pages/state_provider_page.dart';
-import 'package:study_flutter/pages/stream_provider_page.dart';
+import 'package:study_flutter/change_notifier_provider/change_notifier_page.dart';
+import 'package:study_flutter/future_provider/future_provider_page.dart';
+import 'package:study_flutter/provider/provider_page.dart';
+import 'package:study_flutter/state_notifier_provider/state_notifier_page.dart';
+import 'package:study_flutter/state_provider/state_provider_page.dart';
+import 'package:study_flutter/stream_provider/stream_provider_page.dart';
 import 'package:study_flutter/re_button.dart';
 
 class HomePage extends StatelessWidget {

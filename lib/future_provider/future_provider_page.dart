@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_flutter/models/suggestion.dart';
-import 'package:study_flutter/service/api_service.dart';
+import 'package:study_flutter/future_provider/suggestion.dart';
+import 'package:study_flutter/future_provider/suggestion_service.dart';
 
 final suggestionFutureProvider = FutureProvider.autoDispose<Suggestion>((ref) {
-  final apiService = ref.watch(apiServiceProvider);
+  final apiService = ref.watch(suggestionServiceProvider);
   return apiService.getSuggestion();
 });
 
