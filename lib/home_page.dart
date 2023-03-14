@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/change_notifier_provider/change_notifier_page.dart';
+import 'package:study_flutter/change_notifier_provider/change_notifier_provider_page.dart';
 import 'package:study_flutter/future_provider/future_provider_page.dart';
 import 'package:study_flutter/provider/provider_page.dart';
-import 'package:study_flutter/state_notifier_provider/state_notifier_page.dart';
+import 'package:study_flutter/state_notifier_provider/state_notifier_provider_page.dart';
 import 'package:study_flutter/state_provider/state_provider_page.dart';
 import 'package:study_flutter/stream_provider/stream_provider_page.dart';
 import 'package:study_flutter/re_button.dart';
@@ -42,7 +42,8 @@ class HomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => StateProviderPage(
-                        color: Theme.of(context).colorScheme.secondary),
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                   ),
                 );
               },
@@ -58,7 +59,8 @@ class HomePage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => FutureProviderPage(
-                        color: Theme.of(context).colorScheme.tertiary),
+                      color: Theme.of(context).colorScheme.tertiary,
+                    ),
                   ),
                 );
               },
