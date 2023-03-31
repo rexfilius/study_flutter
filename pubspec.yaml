@@ -14,7 +14,6 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  custom_pin_screen: ^0.3.0
 
 dev_dependencies:
   flutter_test:
