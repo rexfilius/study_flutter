@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:study_flutter/app_prefs.dart';
 
-class SwitchesPage extends ConsumerStatefulWidget {
+class SwitchesPage extends ConsumerWidget {
   const SwitchesPage({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SwitchesPageState();
-}
-
-class _SwitchesPageState extends ConsumerState<SwitchesPage> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
@@ -23,7 +18,10 @@ class _SwitchesPageState extends ConsumerState<SwitchesPage> {
               ref.read(balanceProvider.notifier).state = value;
             },
           ),
-          Text(ref.watch(balanceProvider).toString()),
+          Text(
+            ref.watch(balanceProvider).toString(),
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
         ],
       ),
     );

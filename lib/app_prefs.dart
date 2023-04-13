@@ -14,40 +14,6 @@ final balanceProvider = StateProvider<bool>((ref) {
   return currentValue;
 });
 
-// class BalanceNotifier extends Notifier<bool> {
-//   @override
-//   bool build() {
-//     final val = ref.watch(balanceProvider);
-//     return val;
-//   }
-// }
-
 abstract class PrefKeys {
   static const hideBalance = 'hide_balance';
 }
-
-// final appPrefProvider = Provider(
-//   (ref) => AppPrefs(),
-// );
-
-// final setBooleanProvider =
-//     FutureProvider.family<bool>((ref, value) async {
-//   final appPref = ref.read(appPrefProvider);
-//   return appPref.setBoolean(value);
-// });
-
-// class AppPrefs {
-//   Future<SharedPreferences> _getPrefInstance() async {
-//     return await SharedPreferences.getInstance();
-//   }
-
-//   Future<bool> setBoolean(bool value) async {
-//     final v = await _getPrefInstance();
-//     return v.setBool(PrefKeys.hideBalance, value);
-//   }
-
-//   Future<bool?> getBoolean(String key) async {
-//     final v = await _getPrefInstance();
-//     return v.getBool(key);
-//   }
-// }
