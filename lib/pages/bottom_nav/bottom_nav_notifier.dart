@@ -16,6 +16,8 @@ class BottomNavNotifier extends StateNotifier<int> {
   }
 }
 
+/// this does the same thing as the StateNotifier class
+/// and it is the recommended class to extend
 class BottomBarNotifier extends Notifier<int> {
   @override
   int build() {

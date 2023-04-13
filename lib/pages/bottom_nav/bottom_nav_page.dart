@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:study_flutter/bottom_nav_notifier.dart';
-import 'package:study_flutter/sub_home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
+import 'package:study_flutter/pages/bottom_nav/bottom_nav_notifier.dart';
+import 'package:study_flutter/pages/bottom_nav/sub_pages.dart';
 
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
+class BottomNavPage extends ConsumerWidget {
+  const BottomNavPage({super.key});
 
   static const List<Widget> homeTabs = [
     HomePage1(),
@@ -15,7 +15,6 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final navIndex = ref.watch(bottomNavNotifierProvider);
-
     return Scaffold(
       appBar: AppBar(),
       body: Center(
