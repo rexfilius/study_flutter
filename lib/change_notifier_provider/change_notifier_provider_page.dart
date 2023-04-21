@@ -39,7 +39,7 @@ class ChangeNotifierProviderPage extends ConsumerWidget {
                           // Sum the total price of the cart
                           Text(
                             'Total: \$${cartNotifier.cart.fold<double>(0, (sum, item) => sum + item.price)}',
-                            style: Theme.of(context).textTheme.headline6,
+                            style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ],
                       ),
