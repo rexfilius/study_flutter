@@ -11,9 +11,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
-      body: Center(
-        child: Text('Hello World'),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 26, 2, 80),
+              Color.fromARGB(255, 45, 7, 98),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: const Center(
+          child: Text('Hello World'),
+        ),
       ),
     );
   }
