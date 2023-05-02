@@ -25,9 +25,9 @@ class ApiNotifier extends AsyncNotifier<ApiResponse> {
 
 Future<ApiResponse> getApiResponse() async {
   await Future.delayed(const Duration(seconds: 2));
-  return const ApiResponse(
-    data: 'data is Success',
-    id: 200,
-  );
-  //throw 'Error has been thrown';
+  // return const ApiResponse(
+  //   data: 'data is Success',
+  //   id: 200,
+  // );
+  throw 'Error has been thrown';
 }

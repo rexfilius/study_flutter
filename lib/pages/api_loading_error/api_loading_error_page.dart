@@ -1,6 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:study_flutter/pages/api_loading_error/api_endpoint.dart';
+import 'package:study_flutter/pages/api_loading_error/show_error_dialog.dart';
 import 'package:study_flutter/routes/app_routes.dart';
 import 'package:study_flutter/utils/loading_screen.dart';
 
@@ -17,13 +18,7 @@ class ApiLoadingErrorPage extends HookConsumerWidget {
         }
         if (next.error != null) {
           LoadingScreen.instance().hide();
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('An error occured'),
-              duration: Duration(milliseconds: 7000),
-              showCloseIcon: true,
-            ),
-          );
+          shoWErrorDialog(context: context);
         }
         if (next.asData?.value != null) {
           LoadingScreen.instance().hide();
