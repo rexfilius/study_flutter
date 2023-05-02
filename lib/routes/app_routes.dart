@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter/pages/api_loading_error/api_loading_error_page.dart';
+import 'package:study_flutter/pages/api_loading_error/api_success_page.dart';
 import 'package:study_flutter/pages/bottom_nav/bottom_nav_page.dart';
 import 'package:study_flutter/pages/home/home_page.dart';
 import 'package:study_flutter/pages/switches/switches_page.dart';
@@ -7,10 +9,14 @@ abstract class RouteName {
   static const home = '/home';
   static const bottomNavPage = '/bottomNav';
   static const switchesPage = '/switches';
+  static const apiLoadingError = '/apiLoadError';
+  static const apiSuccess = '/apiSuccess';
 }
 
 Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.home: (context) => const HomePage(),
   RouteName.bottomNavPage: (context) => const BottomNavPage(),
   RouteName.switchesPage: (context) => const SwitchesPage(),
+  RouteName.apiLoadingError: (context) => const ApiLoadingErrorPage(),
+  RouteName.apiSuccess: (context) => const ApiSuccessPage(),
 };

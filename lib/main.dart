@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_flutter/app_prefs.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:study_flutter/data/app_prefs.dart';
 import 'package:study_flutter/pages/home/home_page.dart';
 import 'package:study_flutter/routes/app_routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';

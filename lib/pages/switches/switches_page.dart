@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:study_flutter/app_prefs.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:study_flutter/data/app_prefs.dart';
 
 class SwitchesPage extends ConsumerWidget {
   const SwitchesPage({super.key});
