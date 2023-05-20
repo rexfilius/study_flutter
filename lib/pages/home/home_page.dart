@@ -39,6 +39,15 @@ class HomePage extends ConsumerWidget {
               );
             },
           ),
+          ListTile(
+            title: const Text('Future Provider Page'),
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                RouteName.futureProviderPage,
+              );
+            },
+          ),
         ],
       ),
     );
