@@ -8,19 +8,28 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Images'),
+        title: const Text('Images'),
       ),
       body: ListView(
         children: [
           ListTile(
-            title: Text('Display images from the internet'),
+            title: const Text('Display images from the internet'),
             onTap: () {
               Navigator.pushNamed(context, RouteName.imageOne);
             },
           ),
           ListTile(
-            title: Text('Fade in images with a placeholder'),
-          )
+            title: const Text('Fade in images with a placeholder'),
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.imageTwo);
+            },
+          ),
+          ListTile(
+            title: const Text('Work with cached images'),
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.imageThree);
+            },
+          ),
         ],
       ),
     );
