@@ -25,9 +25,46 @@ class ApiNotifier extends AsyncNotifier<ApiResponse> {
 
 Future<ApiResponse> getApiResponse() async {
   await Future.delayed(const Duration(seconds: 2));
-  // return const ApiResponse(
-  //   data: 'data is Success',
-  //   id: 200,
-  // );
-  throw 'Error has been thrown';
+  return const ApiResponse(
+    data: 'data is Success',
+    id: 200,
+  );
+  //throw 'Error has been thrown';
+}
+
+// ===============================================================
+
+final loginUserApiProvider = AsyncNotifierProvider<LoginNotifier, String>(
+  () => LoginNotifier(),
+);
+
+class LoginNotifier extends AsyncNotifier<String> {
+  @override
+  FutureOr<String> build() {
+    return '';
+  }
+
+  Future<void> login({
+    required String name,
+    required String surname,
+  }) async {
+    state = const AsyncValue.loading();
+    try {
+      final api = await loginUser(name: name, surname: surname);
+      state = AsyncValue.data(api);
+    } catch (err, stack) {
+      state = AsyncValue.error(err, stack);
+    }
+  }
+}
+
+Future<String> loginUser({
+  required String name,
+  required String surname,
+}) async {
+  await Future.delayed(const Duration(seconds: 1));
+  if (name != 'John' || surname != 'Doe') {
+    throw 'Your details are incorrect';
+  }
+  return 'Login details correct';
 }

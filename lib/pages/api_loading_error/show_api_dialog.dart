@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-void shoWErrorDialog({
+void showApiDialog({
   required BuildContext context,
+  required String actionText,
+  required String title,
 }) {
   showDialog(
     context: context,
@@ -14,14 +16,14 @@ void shoWErrorDialog({
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: const Text('Dismiss'),
+            child: Text(actionText),
           ),
         ],
         content: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
+          children: [
             Flexible(
-              child: Text('An error occured'),
+              child: Text(title),
             ),
           ],
         ),
