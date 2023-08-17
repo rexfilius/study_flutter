@@ -3,7 +3,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:study_flutter/pages/api_loading_error/api_endpoint.dart';
 import 'package:study_flutter/pages/api_loading_error/show_api_dialog.dart';
-import 'package:study_flutter/routes/app_routes.dart';
 import 'package:study_flutter/utils/loading_screen.dart';
 
 class ApiLoadingErrorPage extends HookConsumerWidget {
@@ -14,29 +13,55 @@ class ApiLoadingErrorPage extends HookConsumerWidget {
     final nameController = useTextEditingController();
     final surnameController = useTextEditingController();
     //
+    // ref.listen(
+    //   loginUserApiProvider,
+    //   (previous, next) {
+    //     if (next.isLoading) {
+    //       LoadingScreen.instance().show(context: context);
+    //     }
+    //     if (next.error != null) {
+    //       LoadingScreen.instance().hide();
+    //       print("ERROR => ${next.error}");
+    //       showApiDialog(
+    //         context: context,
+    //         actionText: 'Dismiss',
+    //         title: 'An error occured',
+    //       );
+    //     } else if (next.asData?.value != null) {
+    //       //
+    //       LoadingScreen.instance().hide();
+    //       showApiDialog(
+    //         context: context,
+    //         actionText: 'Okay',
+    //         title: 'Success',
+    //       );
+    //     }
+    //   },
+    // );
     ref.listen(
       loginUserApiProvider,
-      (previous, next) {
-        if (next.isLoading) {
-          LoadingScreen.instance().show(context: context);
-        }
-        if (next.error != null) {
-          LoadingScreen.instance().hide();
-          showApiDialog(
-            context: context,
-            actionText: 'Dismiss',
-            title: 'An error occured',
-          );
-        }
-        if (next.asData?.value != null) {
-          LoadingScreen.instance().hide();
-          showApiDialog(
-            context: context,
-            actionText: 'Okay',
-            title: 'Success',
-          );
-          //Navigator.of(context).pushNamed(RouteName.apiSuccess);
-        }
+      (_, state) {
+        state.when(
+          data: (data) {
+            LoadingScreen.instance().hide();
+            showApiDialog(
+              context: context,
+              actionText: 'Okay',
+              title: 'Success => $data',
+            );
+          },
+          error: (error, stackTrace) {
+            LoadingScreen.instance().hide();
+            showApiDialog(
+              context: context,
+              actionText: 'Dismiss',
+              title: 'An error occured => ${error.toString()}',
+            );
+          },
+          loading: () {
+            LoadingScreen.instance().show(context: context);
+          },
+        );
       },
     );
     //

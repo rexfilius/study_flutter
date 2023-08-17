@@ -48,6 +48,15 @@ class HomePage extends ConsumerWidget {
               );
             },
           ),
+          ListTile(
+            title: const Text('Textfield State'),
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                RouteName.textfieldState,
+              );
+            },
+          ),
         ],
       ),
     );
