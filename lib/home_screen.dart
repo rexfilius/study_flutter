@@ -1,43 +1,13 @@
-import 'dart:io';
-import 'dart:convert';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:study_flutter/home_provider.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  final netImageUrl = 'https://picsum.photos/250?image=9';
-  File? _imageAsFile;
-  String _imageAsString = '';
-  Future getImageFromCamera() async {
-    final image = await ImagePicker().pickImage(source: ImageSource.camera);
-    if (image == null) return;
-
-    final imageTemporal = File(image.path);
-    setState(() {
-      _imageAsFile = imageTemporal;
-    });
-  }
-
-  Future<void> convertImageToBase64() async {
-    if (_imageAsFile != null) {
-      Uint8List imageAsBytes = await _imageAsFile!.readAsBytes();
-      final base64String = base64.encode(imageAsBytes);
-      setState(() {
-        _imageAsString = base64String;
-      });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final homeState = ref.watch(homeProvider);
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
@@ -50,10 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 200,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: _imageAsFile != null
-                      ? FileImage(_imageAsFile!)
-                      : NetworkImage(netImageUrl) as ImageProvider,
-                ),
+                    image: homeState.imageFromGallery != null
+                        ? FileImage(homeState.imageFromGallery!)
+                        : const AssetImage('assets/images/camera_img.jpg')
+                            as ImageProvider),
                 color: Colors.blue.shade100,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(12),
@@ -61,20 +31,40 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            TextButton.icon(
-              onPressed: getImageFromCamera,
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.amberAccent,
-              ),
-              icon: const Icon(Icons.camera),
-              label: const Text('Take selfie'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton.icon(
+                  onPressed: () {
+                    ref.read(homeProvider.notifier).getImageFromCamera();
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.amberAccent,
+                  ),
+                  icon: const Icon(Icons.camera),
+                  label: const Text('Take Photo'),
+                ),
+                const SizedBox(width: 8.0),
+                TextButton.icon(
+                  onPressed: () {
+                    ref.read(homeProvider.notifier).getImageFromGallery();
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.amberAccent,
+                  ),
+                  icon: const Icon(Icons.camera),
+                  label: const Text('Upload Photo'),
+                ),
+              ],
             ),
             ElevatedButton(
-              onPressed: convertImageToBase64,
+              onPressed: () {
+                ref.read(homeProvider.notifier).convertGalleryImageToBase64();
+              },
               child: const Text('Show Base64 String'),
             ),
             Expanded(
-              child: Text(_imageAsString),
+              child: Text(homeState.imageAsString),
             ),
           ],
         ),
