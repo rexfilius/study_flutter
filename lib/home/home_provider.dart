@@ -4,7 +4,7 @@ import 'dart:typed_data';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:study_flutter/home_screen_state.dart';
+import 'package:study_flutter/home/home_screen_state.dart';
 
 final homeProvider = NotifierProvider<HomeNotifier, HomeScreenState>(
   () => HomeNotifier(),
