@@ -2,9 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:study_flutter/home/home_screen_state.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:m7_livelyness_detection/m7_livelyness_detection.dart';
 
 final homeProvider = NotifierProvider<HomeNotifier, HomeScreenState>(
   () => HomeNotifier(),
@@ -17,7 +20,16 @@ class HomeNotifier extends Notifier<HomeScreenState> {
       imageFromCamera: null,
       imageFromGallery: null,
       imageAsString: '',
+      fileFromDevice: null,
     );
+  }
+
+  Future<void> getFileFromDevice() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    if (result != null) {
+      File file = File(result.files.single.path!);
+      state = state.copyWith(fileFromDevice: file);
+    }
   }
 
   Future<void> getImageFromCamera() async {
@@ -26,6 +38,29 @@ class HomeNotifier extends Notifier<HomeScreenState> {
 
     final imageTemporal = File(image.path);
     state = state.copyWith(imageFromCamera: imageTemporal);
+  }
+
+  Future<void> getImageFromCamera2(BuildContext context) async {
+    M7CapturedImage? response =
+        await M7LivelynessDetection.instance.detectLivelyness(
+      context,
+      config: M7DetectionConfig(
+        steps: [
+          M7LivelynessStepItem(
+            step: M7LivelynessStep.blink,
+            title: 'Blink',
+            isCompleted: false,
+          ),
+          M7LivelynessStepItem(
+            step: M7LivelynessStep.smile,
+            title: 'Smile',
+            isCompleted: false,
+          ),
+        ],
+        startWithInfoScreen: true,
+      ),
+    );
+    print("IMAGE PATH ${response?.imgPath}");
   }
 
   Future<void> getImageFromGallery() async {

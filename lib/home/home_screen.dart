@@ -20,8 +20,8 @@ class HomeScreen extends ConsumerWidget {
               height: 200,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: homeState.imageFromGallery != null
-                        ? FileImage(homeState.imageFromGallery!)
+                    image: homeState.imageFromCamera != null
+                        ? FileImage(homeState.imageFromCamera!)
                         : const AssetImage('assets/images/camera_img.jpg')
                             as ImageProvider),
                 color: Colors.blue.shade100,
@@ -36,7 +36,7 @@ class HomeScreen extends ConsumerWidget {
               children: [
                 TextButton.icon(
                   onPressed: () {
-                    ref.read(homeProvider.notifier).getImageFromCamera();
+                    ref.read(homeProvider.notifier).getImageFromCamera2(context);
                   },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.amberAccent,
@@ -63,6 +63,13 @@ class HomeScreen extends ConsumerWidget {
               },
               child: const Text('Show Base64 String'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                ref.read(homeProvider.notifier).getFileFromDevice();
+              },
+              child: const Text('Upload File'),
+            ),
+            Text("${homeState.fileFromDevice?.path}"),
             Expanded(
               child: Text(homeState.imageAsString),
             ),
