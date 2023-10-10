@@ -40,6 +40,19 @@ class HomeNotifier extends Notifier<HomeScreenState> {
     state = state.copyWith(imageFromCamera: imageTemporal);
   }
 
+  Future<int> getFileSize(String path) async {
+    final fileBytes = await File(path).readAsBytes();
+    return fileBytes.lengthInBytes;
+  }
+
+  getFileSizeInUnits(String path) async {
+    final fileSizeInBytes = await getFileSize(path);
+    final fileSizeInKB = fileSizeInBytes / 1000;
+    final fileSizeInMB = fileSizeInKB / 1000;
+    final fileSizeInGB = fileSizeInMB / 1000;
+    final fileSizeInTB = fileSizeInGB / 1000;
+  }
+
   Future<void> getImageFromCamera2(BuildContext context) async {
     M7CapturedImage? response =
         await M7LivelynessDetection.instance.detectLivelyness(
