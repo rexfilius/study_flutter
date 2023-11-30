@@ -9,8 +9,8 @@ class SlidersPage extends ConsumerStatefulWidget {
 }
 
 class _SlidersPageState extends ConsumerState<SlidersPage> {
-  final durationList = ['60', '90', '180', '270', '360'];
-  double durationSliderValue = 1;
+  final stringList = ['60', '90', '180', '270', '360'];
+  double sliderValue = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -21,40 +21,54 @@ class _SlidersPageState extends ConsumerState<SlidersPage> {
         child: Column(
           children: [
             Slider(
-              value: durationSliderValue,
-              max: (durationList.length - 1).toDouble(),
-              divisions: durationList.length,
-              label: durationSliderValue.round().toString(),
+              value: sliderValue,
+              max: (stringList.length - 1).toDouble(),
+              divisions: stringList.length - 1,
+              label: '${stringList[sliderValue.round()]} days',
               onChanged: (double value) {
                 setState(() {
-                  durationSliderValue = value;
+                  sliderValue = value;
                 });
+                //print(stringList[sliderValue.round()]);
               },
             ),
-            // Text(
-            //   'Index: ${durationSliderValue.round()}',
-            //   style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            // ),
-            Chip(
-              avatar: const CircleAvatar(backgroundColor: Colors.purple),
-              label: Text(
-                '${durationList[durationSliderValue.round()]} days',
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+              ),
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Text(
+                '${stringList[sliderValue.round()]} days'.monthString(),
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
-            Slider(
-              value: durationSliderValue,
-              max: (durationList.length - 1).toDouble(),
-              divisions: durationList.length,
-              label: durationSliderValue.round().toString(),
-              onChanged: null,
-            ),
           ],
         ),
       ),
     );
+  }
+}
+
+/// DISABLED SLIDER WIDGET
+// Slider(
+//   value: durationSliderValue,
+//   max: (durationList.length - 1).toDouble(),
+//   divisions: durationList.length,
+//   label: durationSliderValue.round().toString(),
+//   onChanged: null,
+// ),
+
+extension Splitter on String {
+  String monthString() {
+    final splitt = split(' ');
+    final string1 = splitt[0];
+
+    final parse1 = int.parse(string1);
+    final div1 = parse1 ~/ 30;
+
+    return '$div1 months';
   }
 }

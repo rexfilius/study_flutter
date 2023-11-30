@@ -8,7 +8,7 @@ class FutureProviderPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
       ),
     );
