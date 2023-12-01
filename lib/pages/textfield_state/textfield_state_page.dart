@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:study_flutter/pages/textfield_state/first_name_texfield.dart';
 import 'package:study_flutter/pages/textfield_state/last_name_textfield.dart';
+import 'package:study_flutter/pages/textfield_state/monitor_text_field.dart';
 
 class TextfieldStatePage extends ConsumerWidget {
   const TextfieldStatePage({super.key});
@@ -18,6 +19,7 @@ class TextfieldStatePage extends ConsumerWidget {
           children: [
             const FirstNameTextField(),
             const LastNameTextField(),
+            const MonitorTextField(),
             ElevatedButton(
               onPressed: () {},
               child: const Text('Submit'),
