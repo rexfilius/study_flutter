@@ -5,6 +5,7 @@ import 'package:study_flutter/pages/bottom_nav/bottom_nav_page.dart';
 import 'package:study_flutter/pages/future_provider/future_provider_page.dart';
 import 'package:study_flutter/pages/home/home_page.dart';
 import 'package:study_flutter/pages/keyboard/keyboard_page.dart';
+import 'package:study_flutter/pages/keyboard2/keyboard_page2.dart';
 import 'package:study_flutter/pages/sliders/sliders_page.dart';
 import 'package:study_flutter/pages/switches/switches_page.dart';
 import 'package:study_flutter/pages/textfield_state/textfield_state_page.dart';
@@ -19,6 +20,7 @@ abstract class RouteName {
   static const textfieldState = 'text_field_state';
   static const slidersPage = '/slidersPage';
   static const keyboardPage = 'keyboardPage';
+  static const keyboardPage2 = 'keyboardPage2';
 }
 
 Map<String, Widget Function(BuildContext)> appRoutesMap = {
@@ -30,5 +32,6 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.futureProviderPage: (context) => const FutureProviderPage(),
   RouteName.textfieldState: (context) => const TextfieldStatePage(),
   RouteName.slidersPage: (context) => const SlidersPage(),
-  RouteName.keyboardPage: (context) => const KeyboardPage()
+  RouteName.keyboardPage: (context) => const KeyboardPage(),
+  RouteName.keyboardPage2: (context) => const KeyboardPage2(),
 };
