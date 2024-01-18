@@ -48,6 +48,12 @@ class HomePage extends ConsumerWidget {
               Navigator.pushNamed(context, RouteName.slidersPage);
             },
           ),
+          ListTile(
+            title: const Text('Keyboard'),
+            onTap: () {
+              Navigator.pushNamed(context, RouteName.keyboardPage);
+            },
+          ),
         ],
       ),
     );
