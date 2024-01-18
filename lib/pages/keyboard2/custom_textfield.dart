@@ -6,6 +6,14 @@ import 'package:study_flutter/pages/keyboard2/amount_text_input_formatter.dart';
 import 'package:study_flutter/pages/keyboard2/custom_keyboard_overlay.dart';
 import 'package:study_flutter/utils/extension_on_string.dart';
 
+/// Note: TextInputAction property on a TextFields
+/// https://docs.flutter.dev/ui/interactivity/focus#
+/// https://developer.android.com/reference/android/view/inputmethod/EditorInfo
+/// https://developer.apple.com/documentation/uikit/uireturnkeytype
+/// TextInputAction; none, previous = Android only
+/// TextInputAction; unspecified, done, go, search, send, next, newline = Android & iOS
+/// TextInputAction; continueAction, join, route, emergencyCall = iOS only
+
 class CustomTextField extends StatefulWidget {
   const CustomTextField({
     super.key,
@@ -87,9 +95,7 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _RexTextFieldState extends State<CustomTextField> {
-  ///
-
-  FocusNode focusNode = FocusNode();
+  late final FocusNode focusNode;
 
   @override
   void initState() {
@@ -102,17 +108,15 @@ class _RexTextFieldState extends State<CustomTextField> {
 
     focusNode.addListener(
       () {
-        if (focusNode.hasFocus) {
-          if (Platform.isIOS) {
+        if (Platform.isIOS) {
+          if (focusNode.hasFocus) {
             CustomKeyboardOverlay.showOverlay(
               context,
               keyboardUpButtonPressed: widget.keyboardUpArrowAction,
               keyboardDownButtonPressed: widget.keyboardDownArrowAction,
               keyboardDoneButtonPressed: widget.keyboardDoneAction,
             );
-          }
-        } else {
-          if (Platform.isIOS) {
+          } else {
             CustomKeyboardOverlay.removeOverlay();
           }
         }
