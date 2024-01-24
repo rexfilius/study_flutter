@@ -9,65 +9,40 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(),
-      body: ListView(
+      body: ListView.builder(
         physics: const BouncingScrollPhysics(),
-        children: [
-          ListTile(
-            title: const Text('Bottom Navigation'),
+        itemCount: appPages.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(appPages[index].title),
             onTap: () {
-              Navigator.pushNamed(context, RouteName.bottomNavPage);
+              Navigator.pushNamed(context, appPages[index].route);
             },
-          ),
-          ListTile(
-            title: const Text('Switches Page'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.switchesPage);
-            },
-          ),
-          ListTile(
-            title: const Text('API Loading Error Page'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.apiLoadingError);
-            },
-          ),
-          ListTile(
-            title: const Text('Future Provider Page'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.futureProviderPage);
-            },
-          ),
-          ListTile(
-            title: const Text('Textfield State'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.textfieldState);
-            },
-          ),
-          ListTile(
-            title: const Text('Sliders'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.slidersPage);
-            },
-          ),
-          ListTile(
-            title: const Text('Keyboard'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.keyboardPage);
-            },
-          ),
-          ListTile(
-            title: const Text('Keyboard II'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.keyboardPage2);
-            },
-          ),
-          ListTile(
-            title: const Text('Keyboard III'),
-            onTap: () {
-              Navigator.pushNamed(context, RouteName.keyboardPage3);
-            },
-          ),
-        ],
+          );
+        },
       ),
     );
   }
+}
+
+const appPages = <AppPage>[
+  AppPage(title: 'Bottom Navigation', route: RouteName.bottomNavPage),
+  AppPage(title: 'Switches Page', route: RouteName.switchesPage),
+  AppPage(title: 'API Loading Error Page', route: RouteName.apiLoadingError),
+  AppPage(title: 'Future Provider Page', route: RouteName.futureProviderPage),
+  AppPage(title: 'Textfield State', route: RouteName.textfieldState),
+  AppPage(title: 'Sliders', route: RouteName.slidersPage),
+  AppPage(title: 'Keyboard', route: RouteName.keyboardPage),
+  AppPage(title: 'Keyboard II', route: RouteName.keyboardPage2),
+  AppPage(title: 'Keyboard III', route: RouteName.keyboardPage3),
+];
+
+class AppPage {
+  final String title;
+  final String route;
+
+  const AppPage({
+    required this.title,
+    required this.route,
+  });
 }
