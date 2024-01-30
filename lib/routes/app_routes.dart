@@ -4,6 +4,8 @@ import 'package:study_flutter/pages/api_loading_error/api_success_page.dart';
 import 'package:study_flutter/pages/bottom_nav/bottom_nav_page.dart';
 import 'package:study_flutter/pages/future_provider/future_provider_page.dart';
 import 'package:study_flutter/pages/home/home_page.dart';
+import 'package:study_flutter/pages/infinite_scroll/infinite_scroll_page.dart';
+import 'package:study_flutter/pages/infinite_scroll2/infinite_scroll_page2.dart';
 import 'package:study_flutter/pages/keyboard/keyboard_page.dart';
 import 'package:study_flutter/pages/keyboard2/keyboard_page2.dart';
 import 'package:study_flutter/pages/keyboard3/keyboard_page3.dart';
@@ -23,6 +25,8 @@ abstract class RouteName {
   static const keyboardPage = 'keyboardPage';
   static const keyboardPage2 = 'keyboardPage2';
   static const keyboardPage3 = 'keyboardPage3';
+  static const infiniteScroll = 'infinite_scroll';
+  static const infiniteScroll2 = 'infinite_scroll_2';
 }
 
 Map<String, Widget Function(BuildContext)> appRoutesMap = {
@@ -37,4 +41,6 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.keyboardPage: (context) => const KeyboardPage(),
   RouteName.keyboardPage2: (context) => const KeyboardPage2(),
   RouteName.keyboardPage3: (context) => const KeyboardPage3(),
+  RouteName.infiniteScroll: (context) => const InfiniteScrollPage(),
+  RouteName.infiniteScroll2: (context) => const InfiniteScrollPage2(),
 };
