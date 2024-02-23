@@ -9,6 +9,7 @@ import 'package:study_flutter/pages/infinite_scroll2/infinite_scroll_page2.dart'
 import 'package:study_flutter/pages/keyboard/keyboard_page.dart';
 import 'package:study_flutter/pages/keyboard2/keyboard_page2.dart';
 import 'package:study_flutter/pages/keyboard3/keyboard_page3.dart';
+import 'package:study_flutter/pages/keyboard4/keyboard_page4.dart';
 import 'package:study_flutter/pages/sliders/sliders_page.dart';
 import 'package:study_flutter/pages/switches/switches_page.dart';
 import 'package:study_flutter/pages/textfield_state/textfield_state_page.dart';
@@ -25,6 +26,7 @@ abstract class RouteName {
   static const keyboardPage = 'keyboardPage';
   static const keyboardPage2 = 'keyboardPage2';
   static const keyboardPage3 = 'keyboardPage3';
+  static const keyboardPage4 = 'keyboardPage4';
   static const infiniteScroll = 'infinite_scroll';
   static const infiniteScroll2 = 'infinite_scroll_2';
 }
@@ -41,6 +43,7 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.keyboardPage: (context) => const KeyboardPage(),
   RouteName.keyboardPage2: (context) => const KeyboardPage2(),
   RouteName.keyboardPage3: (context) => const KeyboardPage3(),
+  RouteName.keyboardPage4: (context) => const KeyboardPage4(),
   RouteName.infiniteScroll: (context) => const InfiniteScrollPage(),
   RouteName.infiniteScroll2: (context) => const InfiniteScrollPage2(),
 };

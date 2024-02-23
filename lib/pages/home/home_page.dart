@@ -8,7 +8,9 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Learning Flutter'),
+      ),
       body: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: appPages.length,
@@ -35,6 +37,7 @@ const appPages = <AppPage>[
   AppPage(title: 'Keyboard', route: RouteName.keyboardPage),
   AppPage(title: 'Keyboard II', route: RouteName.keyboardPage2),
   AppPage(title: 'Keyboard III', route: RouteName.keyboardPage3),
+  AppPage(title: 'Keyboard IV', route: RouteName.keyboardPage4),
   AppPage(title: 'Infinite Scroll', route: RouteName.infiniteScroll),
 ];
 
