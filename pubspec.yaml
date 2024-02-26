@@ -6,7 +6,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.1.2 <4.0.0'
+  sdk: '>=3.2.6 <4.0.0'
 
 
 dependencies:
@@ -18,29 +18,38 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
+flutter_launcher_icons:
+  android: true
+  ios: true
+  #image_path: "assets/icon/icon.png"
+  image_path_android: "assets/ify_logo_710x599.png"
+  image_path_ios: "assets/ify_logo_1024x1024.png"
+  min_sdk_android: 21
+  adaptive_icon_foreground: "assets/ify_logo_432x432.png"
+  adaptive_icon_monochrome: "assets/ify_logo_432x432.png"
+  web:
+    generate: true
+    image_path: "assets/ify_logo_1024x1024.png"
+    #background_color: "#hexcode"
+    #theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "assets/ify_logo_1024x1024.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/ify_logo_1024x1024.png"
 
-# The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/ify_logo.png
+    - assets/ify_logo_710x599.png
+    - assets/ify_logo_1024x1024.png
+    - assets/ify_logo_432x432.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
