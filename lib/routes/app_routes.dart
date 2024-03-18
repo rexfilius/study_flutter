@@ -10,6 +10,7 @@ import 'package:study_flutter/pages/keyboard/keyboard_page.dart';
 import 'package:study_flutter/pages/keyboard2/keyboard_page2.dart';
 import 'package:study_flutter/pages/keyboard3/keyboard_page3.dart';
 import 'package:study_flutter/pages/keyboard4/keyboard_page4.dart';
+import 'package:study_flutter/pages/progress_indicator/progress_indicator.dart';
 import 'package:study_flutter/pages/sliders/sliders_page.dart';
 import 'package:study_flutter/pages/switches/switches_page.dart';
 import 'package:study_flutter/pages/textfield_state/textfield_state_page.dart';
@@ -29,6 +30,7 @@ abstract class RouteName {
   static const keyboardPage4 = 'keyboardPage4';
   static const infiniteScroll = 'infinite_scroll';
   static const infiniteScroll2 = 'infinite_scroll_2';
+  static const progressIndicator = 'progress_indicator';
 }
 
 Map<String, Widget Function(BuildContext)> appRoutesMap = {
@@ -46,4 +48,5 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.keyboardPage4: (context) => const KeyboardPage4(),
   RouteName.infiniteScroll: (context) => const InfiniteScrollPage(),
   RouteName.infiniteScroll2: (context) => const InfiniteScrollPage2(),
+  RouteName.progressIndicator:(context) => const ProgressIndicatorPage(),
 };

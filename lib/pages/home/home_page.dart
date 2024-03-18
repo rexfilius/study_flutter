@@ -39,6 +39,7 @@ const appPages = <AppPage>[
   AppPage(title: 'Keyboard III', route: RouteName.keyboardPage3),
   AppPage(title: 'Keyboard IV', route: RouteName.keyboardPage4),
   AppPage(title: 'Infinite Scroll', route: RouteName.infiniteScroll),
+  AppPage(title: 'Progress Indicator', route: RouteName.progressIndicator),
 ];
 
 class AppPage {
