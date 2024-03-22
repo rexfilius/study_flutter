@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:study_flutter/routes/app_routes.dart';
 
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
+class HomeScreen extends ConsumerWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple.shade300,
         title: const Text('Learning Flutter'),
       ),
       body: ListView.builder(
@@ -27,26 +28,29 @@ class HomePage extends ConsumerWidget {
   }
 }
 
-const appPages = <AppPage>[
-  AppPage(title: 'Bottom Navigation', route: RouteName.bottomNavPage),
-  AppPage(title: 'Switches Page', route: RouteName.switchesPage),
-  AppPage(title: 'API Loading Error Page', route: RouteName.apiLoadingError),
-  AppPage(title: 'Future Provider Page', route: RouteName.futureProviderPage),
-  AppPage(title: 'Textfield State', route: RouteName.textfieldState),
-  AppPage(title: 'Sliders', route: RouteName.slidersPage),
-  AppPage(title: 'Keyboard', route: RouteName.keyboardPage),
-  AppPage(title: 'Keyboard II', route: RouteName.keyboardPage2),
-  AppPage(title: 'Keyboard III', route: RouteName.keyboardPage3),
-  AppPage(title: 'Keyboard IV', route: RouteName.keyboardPage4),
-  AppPage(title: 'Infinite Scroll', route: RouteName.infiniteScroll),
-  AppPage(title: 'Progress Indicator', route: RouteName.progressIndicator),
+const appPages = <AppScreen>[
+  AppScreen(title: 'Bottom Navigation', route: RouteName.bottomNavPage),
+  AppScreen(title: 'Switches Page', route: RouteName.switchesPage),
+  AppScreen(title: 'API Loading Error Page', route: RouteName.apiLoadingError),
+  AppScreen(title: 'Future Provider Page', route: RouteName.futureProviderPage),
+  AppScreen(title: 'Textfield State', route: RouteName.textfieldState),
+  AppScreen(title: 'Sliders', route: RouteName.slidersPage),
+  AppScreen(title: 'Keyboard', route: RouteName.keyboardPage),
+  AppScreen(title: 'Keyboard II', route: RouteName.keyboardPage2),
+  AppScreen(title: 'Keyboard III', route: RouteName.keyboardPage3),
+  AppScreen(title: 'Keyboard IV', route: RouteName.keyboardPage4),
+  AppScreen(title: 'Infinite Scroll', route: RouteName.infiniteScroll),
+  AppScreen(title: 'Progress Indicator', route: RouteName.progressIndicator),
+  AppScreen(
+      title: 'Face Detection (Take Picture)', route: RouteName.faceDetection),
+  AppScreen(title: 'Face Detection (ML Kit)', route: RouteName.faceDetection2),
 ];
 
-class AppPage {
+class AppScreen {
   final String title;
   final String route;
 
-  const AppPage({
+  const AppScreen({
     required this.title,
     required this.route,
   });
