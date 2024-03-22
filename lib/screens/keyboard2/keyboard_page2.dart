@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:study_flutter/pages/keyboard2/custom_textfield.dart';
+import 'package:study_flutter/screens/keyboard2/custom_textfield.dart';
 
 class KeyboardPage2 extends ConsumerStatefulWidget {
   const KeyboardPage2({super.key});

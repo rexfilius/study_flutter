@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:study_flutter/pages/keyboard3/input_pin_widget.dart';
+import 'package:study_flutter/screens/keyboard3/input_pin_widget.dart';
 
 class KeyboardPage3 extends ConsumerWidget {
   const KeyboardPage3({super.key});

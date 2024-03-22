@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:study_flutter/pages/bottom_nav/bottom_nav_notifier.dart';
-import 'package:study_flutter/pages/bottom_nav/sub_pages.dart';
+import 'package:study_flutter/screens/bottom_nav/bottom_nav_notifier.dart';
+import 'package:study_flutter/screens/bottom_nav/sub_pages.dart';
 
 class BottomNavPage extends ConsumerWidget {
   const BottomNavPage({super.key});

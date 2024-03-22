@@ -1,8 +1,8 @@
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:study_flutter/pages/api_loading_error/api_endpoint.dart';
-import 'package:study_flutter/pages/api_loading_error/show_api_dialog.dart';
+import 'package:study_flutter/screens/api_loading_error/api_endpoint.dart';
+import 'package:study_flutter/screens/api_loading_error/show_api_dialog.dart';
 import 'package:study_flutter/utils/loading_screen.dart';
 
 class ApiLoadingErrorPage extends HookConsumerWidget {

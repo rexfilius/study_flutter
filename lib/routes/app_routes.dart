@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/pages/api_loading_error/api_loading_error_page.dart';
-import 'package:study_flutter/pages/api_loading_error/api_success_page.dart';
-import 'package:study_flutter/pages/bottom_nav/bottom_nav_page.dart';
-import 'package:study_flutter/pages/future_provider/future_provider_page.dart';
-import 'package:study_flutter/pages/home/home_page.dart';
-import 'package:study_flutter/pages/infinite_scroll/infinite_scroll_page.dart';
-import 'package:study_flutter/pages/infinite_scroll2/infinite_scroll_page2.dart';
-import 'package:study_flutter/pages/keyboard/keyboard_page.dart';
-import 'package:study_flutter/pages/keyboard2/keyboard_page2.dart';
-import 'package:study_flutter/pages/keyboard3/keyboard_page3.dart';
-import 'package:study_flutter/pages/keyboard4/keyboard_page4.dart';
-import 'package:study_flutter/pages/progress_indicator/progress_indicator.dart';
-import 'package:study_flutter/pages/sliders/sliders_page.dart';
-import 'package:study_flutter/pages/switches/switches_page.dart';
-import 'package:study_flutter/pages/textfield_state/textfield_state_page.dart';
+import 'package:study_flutter/screens/api_loading_error/api_loading_error_page.dart';
+import 'package:study_flutter/screens/api_loading_error/api_success_page.dart';
+import 'package:study_flutter/screens/bottom_nav/bottom_nav_page.dart';
+import 'package:study_flutter/screens/future_provider/future_provider_page.dart';
+import 'package:study_flutter/screens/home/home_page.dart';
+import 'package:study_flutter/screens/infinite_scroll/infinite_scroll_page.dart';
+import 'package:study_flutter/screens/infinite_scroll2/infinite_scroll_page2.dart';
+import 'package:study_flutter/screens/keyboard/keyboard_page.dart';
+import 'package:study_flutter/screens/keyboard2/keyboard_page2.dart';
+import 'package:study_flutter/screens/keyboard3/keyboard_page3.dart';
+import 'package:study_flutter/screens/keyboard4/keyboard_page4.dart';
+import 'package:study_flutter/screens/progress_indicator/progress_indicator.dart';
+import 'package:study_flutter/screens/sliders/sliders_page.dart';
+import 'package:study_flutter/screens/switches/switches_page.dart';
+import 'package:study_flutter/screens/textfield_state/textfield_state_page.dart';
 
 abstract class RouteName {
   static const home = '/home';

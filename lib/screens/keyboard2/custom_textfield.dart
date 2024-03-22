@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:study_flutter/pages/keyboard2/amount_text_input_formatter.dart';
-import 'package:study_flutter/pages/keyboard2/custom_keyboard_overlay.dart';
+import 'package:study_flutter/screens/keyboard2/amount_text_input_formatter.dart';
+import 'package:study_flutter/screens/keyboard2/custom_keyboard_overlay.dart';
 import 'package:study_flutter/utils/extension_on_string.dart';
 
 /// Note: TextInputAction property on a TextFields

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:study_flutter/pages/keyboard2/custom_input_view.dart';
+import 'package:study_flutter/screens/keyboard2/custom_input_view.dart';
 
 class CustomKeyboardOverlay {
   static OverlayEntry? _overlayEntry;

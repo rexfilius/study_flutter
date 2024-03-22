@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:study_flutter/pages/progress_indicator/x_paint.dart';
-import 'package:study_flutter/pages/progress_indicator/x_utils.dart';
+import 'package:study_flutter/screens/progress_indicator/x_paint.dart';
+import 'package:study_flutter/screens/progress_indicator/x_utils.dart';
 
 class CircularGradientSpinner extends StatefulWidget {
   final double size;

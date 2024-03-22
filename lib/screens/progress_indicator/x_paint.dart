@@ -1,7 +1,7 @@
 import 'dart:math' show pi, cos, sin;
 
 import 'package:flutter/material.dart';
-import 'package:study_flutter/pages/progress_indicator/x_utils.dart';
+import 'package:study_flutter/screens/progress_indicator/x_utils.dart';
 
 extension NumToRadians on num {
   double toRadians() => toDouble() * (pi / 180.0);

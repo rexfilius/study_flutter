@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:study_flutter/pages/api_loading_error/api_model.dart';
+import 'package:study_flutter/screens/api_loading_error/api_model.dart';
 
 final apiNotifierProvider =
     AsyncNotifierProvider<ApiNotifier, ApiResponse>(ApiNotifier.new);

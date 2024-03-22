@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:study_flutter/pages/infinite_scroll/beer.dart';
+import 'package:study_flutter/screens/infinite_scroll/beer.dart';
 
 final paginatorProvider =
     AsyncNotifierProvider<PaginatorController, List<Beer>>(

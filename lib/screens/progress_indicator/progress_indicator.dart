@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:study_flutter/pages/progress_indicator/circular_gradient_spinner.dart';
+import 'package:study_flutter/screens/progress_indicator/circular_gradient_spinner.dart';
 
 class ProgressIndicatorPage extends ConsumerStatefulWidget {
   const ProgressIndicatorPage({super.key});
