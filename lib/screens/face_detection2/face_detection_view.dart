@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
 
 import 'detector_view.dart';
-import 'face_detector_painter.dart';
+import 'utils/face_detector_painter.dart';
 
-class FaceDetectorView extends StatefulWidget {
-  const FaceDetectorView({super.key});
+class FaceDetectionView extends StatefulWidget {
+  const FaceDetectionView({super.key});
 
   @override
-  State<FaceDetectorView> createState() => _FaceDetectorViewState();
+  State<FaceDetectionView> createState() => _FaceDetectionViewState();
 }
 
-class _FaceDetectorViewState extends State<FaceDetectorView> {
+class _FaceDetectionViewState extends State<FaceDetectionView> {
   final FaceDetector _faceDetector = FaceDetector(
     options: FaceDetectorOptions(
       enableContours: true,
@@ -34,16 +34,13 @@ class _FaceDetectorViewState extends State<FaceDetectorView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Face detector view')),
-      body: DetectorView(
-        title: 'Face Detector',
-        customPaint: _customPaint,
-        text: _text,
-        onImage: _processImage,
-        initialCameraLensDirection: _cameraLensDirection,
-        onCameraLensDirectionChanged: (value) => _cameraLensDirection = value,
-      ),
+    return DetectorView(
+      title: 'Face Detector',
+      customPaint: _customPaint,
+      text: _text,
+      onImage: _processImage,
+      initialCameraLensDirection: _cameraLensDirection,
+      onCameraLensDirectionChanged: (value) => _cameraLensDirection = value,
     );
   }
 

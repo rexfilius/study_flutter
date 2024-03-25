@@ -16,4 +16,5 @@ abstract class RouteName {
   static const progressIndicator = 'progress_indicator';
   static const faceDetection = 'face_detection';
   static const faceDetection2 = 'face_detection2';
+  static const faceDetection3 = 'face_detection3';
 }

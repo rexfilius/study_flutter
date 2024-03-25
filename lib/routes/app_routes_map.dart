@@ -4,7 +4,8 @@ import 'package:study_flutter/screens/api_loading_error/api_loading_error_page.d
 import 'package:study_flutter/screens/api_loading_error/api_success_page.dart';
 import 'package:study_flutter/screens/bottom_nav/bottom_nav_page.dart';
 import 'package:study_flutter/screens/face_detection/face_detection_screen.dart';
-import 'package:study_flutter/screens/face_detection2/face_detection2.dart';
+import 'package:study_flutter/screens/face_detection2/face_detection_view.dart';
+import 'package:study_flutter/screens/face_detection3/face_detection3.dart';
 import 'package:study_flutter/screens/future_provider/future_provider_page.dart';
 import 'package:study_flutter/screens/home/home_page.dart';
 import 'package:study_flutter/screens/infinite_scroll/infinite_scroll_page.dart';
@@ -35,5 +36,6 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.infiniteScroll2: (context) => const InfiniteScrollPage2(),
   RouteName.progressIndicator: (context) => const ProgressIndicatorPage(),
   RouteName.faceDetection: (context) => const FaceDetectionScreen(),
-  RouteName.faceDetection2: (context) => const FaceDetectorView(),
+  RouteName.faceDetection2: (context) => const FaceDetectionView(),
+  RouteName.faceDetection3: (context) => const FaceDetection3Screen(),
 };
