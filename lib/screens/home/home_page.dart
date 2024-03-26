@@ -45,6 +45,8 @@ const appPages = <AppScreen>[
       title: 'Face Detection (Take Picture)', route: RouteName.faceDetection),
   AppScreen(title: 'Face Detection (ML Kit)', route: RouteName.faceDetection2),
   AppScreen(title: 'Face Detection 3', route: RouteName.faceDetection3),
+  AppScreen(
+      title: 'Face Detection (Youtube tutor)', route: RouteName.faceDetection4),
 ];
 
 class AppScreen {

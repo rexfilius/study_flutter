@@ -16,10 +16,16 @@ class FaceDetection3Screen extends ConsumerStatefulWidget {
 class _FaceDetection3State extends ConsumerState<FaceDetection3Screen> {
   File? imageFile;
   late String imageFileName;
+  String? processText;
 
   Future<void> doFaceDetection() async {
     final inputImage = InputImage.fromFile(imageFile!);
-    final options = FaceDetectorOptions();
+    final options = FaceDetectorOptions(
+      enableLandmarks: true,
+      enableClassification: true,
+      enableContours: true,
+      enableTracking: true,
+    );
     final faceDetector = FaceDetector(options: options);
     //
     final List<Face> faces = await faceDetector.processImage(inputImage);
@@ -50,6 +56,13 @@ class _FaceDetection3State extends ConsumerState<FaceDetection3Screen> {
         final int? id = face.trackingId;
       }
     }
+    if (inputImage.metadata?.size != null &&
+        inputImage.metadata?.rotation != null) {
+    } else {
+      setState(() {
+        processText = 'Faces found: ${faces.length}\n\n';
+      });
+    }
     faceDetector.close();
   }
 
@@ -74,6 +87,7 @@ class _FaceDetection3State extends ConsumerState<FaceDetection3Screen> {
             ),
           ),
           const SizedBox(height: 16.0),
+          Text(processText ?? ''),
           ElevatedButton(
             onPressed: () async {
               final image = await ImagePicker().pickImage(

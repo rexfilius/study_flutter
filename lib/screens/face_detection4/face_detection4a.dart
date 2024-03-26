@@ -1,31 +1,31 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_mlkit_face_detection/google_mlkit_face_detection.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:study_flutter/screens/face_detection4/face_detection4_camera_view.dart';
+import 'package:study_flutter/screens/face_detection4/face_painter.dart';
 
-import 'detector_view.dart';
-import 'utils/face_detector_painter.dart';
-
-class FaceDetectionView extends StatefulWidget {
-  const FaceDetectionView({super.key});
+class FaceDetection4A extends ConsumerStatefulWidget {
+  const FaceDetection4A({super.key});
 
   @override
-  State<FaceDetectionView> createState() => _FaceDetectionViewState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _FaceDetector4PageState();
 }
 
-class _FaceDetectionViewState extends State<FaceDetectionView> {
+class _FaceDetector4PageState extends ConsumerState<FaceDetection4A> {
   final FaceDetector _faceDetector = FaceDetector(
     options: FaceDetectorOptions(
       enableContours: true,
-      enableLandmarks: true,
-      enableTracking: true,
       enableClassification: true,
     ),
   );
+
   bool _canProcess = true;
   bool _isBusy = false;
   CustomPaint? _customPaint;
   String? _text;
-  var _cameraLensDirection = CameraLensDirection.front;
 
   @override
   void dispose() {
@@ -36,17 +36,18 @@ class _FaceDetectionViewState extends State<FaceDetectionView> {
 
   @override
   Widget build(BuildContext context) {
-    return DetectorView(
-      title: 'Face Detector',
+    return FaceDetection4CameraView(
+      title: 'Face detector',
       customPaint: _customPaint,
       text: _text,
-      onImage: _processImage,
-      initialCameraLensDirection: _cameraLensDirection,
-      onCameraLensDirectionChanged: (value) => _cameraLensDirection = value,
+      onImage: (inputImage) {
+        processImage(inputImage);
+      },
+      initialDirection: CameraLensDirection.front,
     );
   }
 
-  Future<void> _processImage(InputImage inputImage) async {
+  Future<void> processImage(InputImage inputImage) async {
     if (!_canProcess) return;
     if (_isBusy) return;
     _isBusy = true;
@@ -56,25 +57,21 @@ class _FaceDetectionViewState extends State<FaceDetectionView> {
     final faces = await _faceDetector.processImage(inputImage);
     if (inputImage.metadata?.size != null &&
         inputImage.metadata?.rotation != null) {
-      final painter = FaceDetectorPainter(
+      final painter = FacePainter(
         faces,
         inputImage.metadata!.size,
         inputImage.metadata!.rotation,
-        _cameraLensDirection,
       );
       _customPaint = CustomPaint(painter: painter);
     } else {
-      String text = 'Faces found: ${faces.length}\n\n';
+      String text = "Faces found: ${faces.length}\n\n";
       for (final face in faces) {
-        text += 'face: ${face.boundingBox}\n\n';
+        text += "face: ${face.boundingBox}\n\n";
       }
       _text = text;
-      // TODO: set _customPaint to draw boundingRect on top of image
       _customPaint = null;
     }
     _isBusy = false;
-    if (mounted) {
-      setState(() {});
-    }
+    if (mounted) setState(() {});
   }
 }
