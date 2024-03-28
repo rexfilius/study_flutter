@@ -1,3 +1,4 @@
+import 'package:face_camera/face_camera.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:study_flutter/data/app_prefs.dart';
@@ -8,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
+  await FaceCamera.initialize();
 
   runApp(
     ProviderScope(

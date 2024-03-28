@@ -16,21 +16,16 @@ class FaceDetection3Screen extends ConsumerStatefulWidget {
 class _FaceDetection3State extends ConsumerState<FaceDetection3Screen> {
   File? imageFile;
   late String imageFileName;
-  String? processText;
+  String? facesFoundText;
+  String? imageData;
+  late FaceDetector faceDetector;
 
   Future<void> doFaceDetection() async {
-    final inputImage = InputImage.fromFile(imageFile!);
-    final options = FaceDetectorOptions(
-      enableLandmarks: true,
-      enableClassification: true,
-      enableContours: true,
-      enableTracking: true,
-    );
-    final faceDetector = FaceDetector(options: options);
-    //
+    //final inputImage = InputImage.fromFile(imageFile!);
+    final inputImage = InputImage.fromFilePath(imageFile!.path);
     final List<Face> faces = await faceDetector.processImage(inputImage);
 
-    for (Face face in faces) {
+    /*for (Face face in faces) {
       final Rect boundingBox = face.boundingBox;
       // Head is tilted up and down rotX degrees
       final double? rotX = face.headEulerAngleX;
@@ -55,15 +50,32 @@ class _FaceDetection3State extends ConsumerState<FaceDetection3Screen> {
       if (face.trackingId != null) {
         final int? id = face.trackingId;
       }
-    }
+    }*/
     if (inputImage.metadata?.size != null &&
         inputImage.metadata?.rotation != null) {
     } else {
       setState(() {
-        processText = 'Faces found: ${faces.length}\n\n';
+        facesFoundText = 'Faces found: ${faces.length}\n\n';
       });
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    final options = FaceDetectorOptions(
+      enableLandmarks: true,
+      enableClassification: true,
+      enableContours: true,
+      enableTracking: true,
+    );
+    faceDetector = FaceDetector(options: options);
+  }
+
+  @override
+  void dispose() {
     faceDetector.close();
+    super.dispose();
   }
 
   @override
@@ -74,31 +86,43 @@ class _FaceDetection3State extends ConsumerState<FaceDetection3Screen> {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 250,
-            width: 250,
-            child: Container(
-              color: Colors.blue,
-              child: imageFile == null
-                  ? const Text('No image')
-                  : Image.file(imageFile!),
+          Align(
+            alignment: Alignment.center,
+            child: SizedBox(
+              height: 250,
+              width: 250,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(24)),
+                  border: Border.all(
+                    color: Colors.purpleAccent,
+                    width: 2.0,
+                  ),
+                ),
+                child: imageFile == null
+                    ? const Center(child: Text('No image'))
+                    : Image.file(imageFile!),
+              ),
             ),
           ),
           const SizedBox(height: 16.0),
-          Text(processText ?? ''),
+          Text(facesFoundText ?? ''),
+          Text(imageData ?? ''),
+          const SizedBox(height: 8.0),
           ElevatedButton(
             onPressed: () async {
-              final image = await ImagePicker().pickImage(
+              XFile? image = await ImagePicker().pickImage(
                 source: ImageSource.camera,
                 preferredCameraDevice: CameraDevice.front,
                 imageQuality: 50,
+                requestFullMetadata: true,
               );
               if (image == null) return;
               setState(() {
                 imageFile = File(image.path);
                 imageFileName = File(imageFile!.path).uri.pathSegments.last;
+                imageData = image.mimeType;
               });
               await doFaceDetection();
             },

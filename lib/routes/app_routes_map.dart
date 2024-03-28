@@ -8,6 +8,7 @@ import 'package:study_flutter/screens/face_detection2/face_detection_view.dart';
 import 'package:study_flutter/screens/face_detection3/face_detection3.dart';
 import 'package:study_flutter/screens/face_detection4/face_detection4.dart';
 import 'package:study_flutter/screens/face_detection4/face_detection4a.dart';
+import 'package:study_flutter/screens/face_detection5/face_detection5.dart';
 import 'package:study_flutter/screens/future_provider/future_provider_page.dart';
 import 'package:study_flutter/screens/home/home_page.dart';
 import 'package:study_flutter/screens/infinite_scroll/infinite_scroll_page.dart';
@@ -42,4 +43,5 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.faceDetection3: (context) => const FaceDetection3Screen(),
   RouteName.faceDetection4: (context) => const FaceDetection4(),
   RouteName.faceDetection4A: (context) => const FaceDetection4A(),
+  RouteName.faceDetection5: (context) => const FaceDetection5(),
 };

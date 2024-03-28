@@ -19,4 +19,5 @@ abstract class RouteName {
   static const faceDetection3 = 'face_detection3';
   static const faceDetection4 = 'face_detection4';
   static const faceDetection4A = 'face_detection4a';
+  static const faceDetection5 = 'face_detection5';
 }

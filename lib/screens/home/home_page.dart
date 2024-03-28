@@ -43,10 +43,15 @@ const appPages = <AppScreen>[
   AppScreen(title: 'Progress Indicator', route: RouteName.progressIndicator),
   AppScreen(
       title: 'Face Detection (Take Picture)', route: RouteName.faceDetection),
-  AppScreen(title: 'Face Detection (ML Kit)', route: RouteName.faceDetection2),
-  AppScreen(title: 'Face Detection 3', route: RouteName.faceDetection3),
+  AppScreen(
+      title: 'Face Detection (Google ML Kit)', route: RouteName.faceDetection2),
+  AppScreen(
+      title: 'Face Detection (My Iteration)', route: RouteName.faceDetection3),
   AppScreen(
       title: 'Face Detection (Youtube tutor)', route: RouteName.faceDetection4),
+  AppScreen(
+      title: 'Face Detection (Face Camera Plugin)',
+      route: RouteName.faceDetection5),
 ];
 
 class AppScreen {

@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>still-camera</string>
+		<string>front-facing-camera</string>
+		<string>camera-flash</string>
+		<string>auto-focus-camera</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -45,7 +52,6 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<!-- next line is info added as the app grows -->
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App needs to upload photo from the library/gallery.</string>
 	<key>NSCameraUsageDescription</key>
