@@ -40,18 +40,12 @@ const appPages = <AppScreen>[
   AppScreen(title: 'Keyboard III', route: RouteName.keyboardPage3),
   AppScreen(title: 'Keyboard IV', route: RouteName.keyboardPage4),
   AppScreen(title: 'Infinite Scroll', route: RouteName.infiniteScroll),
-  AppScreen(title: 'Progress Indicator', route: RouteName.progressIndicator),
   AppScreen(
-      title: 'Face Detection (Take Picture)', route: RouteName.faceDetection),
-  AppScreen(
-      title: 'Face Detection (Google ML Kit)', route: RouteName.faceDetection2),
-  AppScreen(
-      title: 'Face Detection (My Iteration)', route: RouteName.faceDetection3),
-  AppScreen(
-      title: 'Face Detection (Youtube tutor)', route: RouteName.faceDetection4),
-  AppScreen(
-      title: 'Face Detection (Face Camera Plugin)',
-      route: RouteName.faceDetection5),
+    title: 'Progress Indicator',
+    route: RouteName.progressIndicator,
+  ),
+  AppScreen(title: 'Encryption - RSA', route: RouteName.encrytionPage),
+  AppScreen(title: 'Encryption - OpenPGP', route: RouteName.encryption2Page),
 ];
 
 class AppScreen {

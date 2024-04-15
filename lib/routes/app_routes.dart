@@ -14,10 +14,6 @@ abstract class RouteName {
   static const infiniteScroll = 'infinite_scroll';
   static const infiniteScroll2 = 'infinite_scroll_2';
   static const progressIndicator = 'progress_indicator';
-  static const faceDetection = 'face_detection';
-  static const faceDetection2 = 'face_detection2';
-  static const faceDetection3 = 'face_detection3';
-  static const faceDetection4 = 'face_detection4';
-  static const faceDetection4A = 'face_detection4a';
-  static const faceDetection5 = 'face_detection5';
+  static const encrytionPage = 'encryption_page';
+  static const encryption2Page = 'encryption2_page';
 }
