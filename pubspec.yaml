@@ -14,23 +14,24 @@ dependencies:
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.0.20
   hooks_riverpod: ^2.3.6
-  flutter_hooks: ^0.20.3
+  flutter_hooks: ^0.21.2
   equatable: ^2.0.5
-  modal_bottom_sheet: ^2.1.2
+  modal_bottom_sheet: ^3.0.0
   keyboard_actions: ^4.2.0
-  intl: ^0.19.0
+  intl: ^0.20.2
   dio: ^5.4.0
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons: ^0.14.3
   image_picker: ^1.0.7
-  camera: ^0.10.5+9
+  camera: ^0.11.0+2
   path_provider: ^2.1.2
-  fast_rsa: ^3.6.1
-  openpgp: ^3.7.2
+  # fast_rsa: ^3.6.1
+  # openpgp: ^3.7.2
+  nfc_manager: ^3.5.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
+  flutter_lints: ^5.0.0
 
 flutter_launcher_icons:
   android: true

@@ -1,12 +1,10 @@
 PODS:
   - camera_avfoundation (0.0.1):
     - Flutter
-  - fast_rsa (0.6.0):
-    - Flutter
   - Flutter (1.0.0)
   - image_picker_ios (0.0.1):
     - Flutter
-  - openpgp (0.6.0):
+  - nfc_manager (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
     - Flutter
@@ -17,38 +15,34 @@ PODS:
 
 DEPENDENCIES:
   - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
-  - fast_rsa (from `.symlinks/plugins/fast_rsa/ios`)
   - Flutter (from `Flutter`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
-  - openpgp (from `.symlinks/plugins/openpgp/ios`)
+  - nfc_manager (from `.symlinks/plugins/nfc_manager/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
 
 EXTERNAL SOURCES:
   camera_avfoundation:
     :path: ".symlinks/plugins/camera_avfoundation/ios"
-  fast_rsa:
-    :path: ".symlinks/plugins/fast_rsa/ios"
   Flutter:
     :path: Flutter
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
-  openpgp:
-    :path: ".symlinks/plugins/openpgp/ios"
+  nfc_manager:
+    :path: ".symlinks/plugins/nfc_manager/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
 
 SPEC CHECKSUMS:
-  camera_avfoundation: 759172d1a77ae7be0de08fc104cfb79738b8a59e
-  fast_rsa: 35bf8b5822f4c477b921dc1f32219145328ae3c4
+  camera_avfoundation: 04b44aeb14070126c6529e5ab82cc7c9fca107cf
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  image_picker_ios: b545a5f16c0fa88e3ecbbce3ed4de45567a8ec18
-  openpgp: 083ff123fe4d33431e1fae83c6d4a4d9d82dfb18
-  path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
-  shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
+  image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
+  nfc_manager: 9c40fe22528ab871ca11e52ea8b95790e9d92ca2
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
 
 PODFILE CHECKSUM: 7be2f5f74864d463a8ad433546ed1de7e0f29aef
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.16.2

@@ -58,5 +58,7 @@
 	<string>App needs to take a picture with the camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>App needs microphone to record audio</string>
+	<key>NFCReaderUsageDescription</key>
+    <string>This app uses NFC to read and write NFC tags.</string>
 </dict>
 </plist>

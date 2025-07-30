@@ -3,6 +3,7 @@ import 'package:study_flutter/routes/app_routes.dart';
 import 'package:study_flutter/screens/api_loading_error/api_loading_error_page.dart';
 import 'package:study_flutter/screens/api_loading_error/api_success_page.dart';
 import 'package:study_flutter/screens/bottom_nav/bottom_nav_page.dart';
+import 'package:study_flutter/screens/cupertinoPicker/cupertino_picker_page.dart';
 import 'package:study_flutter/screens/encryption/encryption_page.dart';
 import 'package:study_flutter/screens/encryption2/encryption2_page.dart';
 import 'package:study_flutter/screens/future_provider/future_provider_page.dart';
@@ -13,6 +14,8 @@ import 'package:study_flutter/screens/keyboard/keyboard_page.dart';
 import 'package:study_flutter/screens/keyboard2/keyboard_page2.dart';
 import 'package:study_flutter/screens/keyboard3/keyboard_page3.dart';
 import 'package:study_flutter/screens/keyboard4/keyboard_page4.dart';
+import 'package:study_flutter/screens/nfc_feature/nfc_logic2.dart';
+import 'package:study_flutter/screens/nfc_feature/nfc_page1.dart';
 import 'package:study_flutter/screens/progress_indicator/progress_indicator.dart';
 import 'package:study_flutter/screens/sliders/sliders_page.dart';
 import 'package:study_flutter/screens/switches/switches_page.dart';
@@ -34,6 +37,8 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   RouteName.infiniteScroll: (context) => const InfiniteScrollPage(),
   RouteName.infiniteScroll2: (context) => const InfiniteScrollPage2(),
   RouteName.progressIndicator: (context) => const ProgressIndicatorPage(),
-  RouteName.encrytionPage: (context) => const EncryptionPage(),
-  RouteName.encryption2Page: (context) => const Encryption2Page(),
+  //RouteName.encrytionPage: (context) => const EncryptionPage(),
+  //RouteName.encryption2Page: (context) => const Encryption2Page(),
+  RouteName.pickerPage: (context) => const CupertinoPickerPage(),
+  RouteName.nfcPage: (context) => const NFCPage2()
 };

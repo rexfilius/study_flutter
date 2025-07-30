@@ -16,4 +16,6 @@ abstract class RouteName {
   static const progressIndicator = 'progress_indicator';
   static const encrytionPage = 'encryption_page';
   static const encryption2Page = 'encryption2_page';
+  static const pickerPage = 'picker_page';
+  static const nfcPage = 'nfc_page';
 }

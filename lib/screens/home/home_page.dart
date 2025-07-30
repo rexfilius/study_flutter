@@ -46,6 +46,8 @@ const appPages = <AppScreen>[
   ),
   AppScreen(title: 'Encryption - RSA', route: RouteName.encrytionPage),
   AppScreen(title: 'Encryption - OpenPGP', route: RouteName.encryption2Page),
+  AppScreen(title: 'Cupertino Picker', route: RouteName.pickerPage),
+  AppScreen(title: 'NFC Page', route: RouteName.nfcPage),
 ];
 
 class AppScreen {

@@ -17,7 +17,7 @@ class _MonitorTextFieldState extends ConsumerState<MonitorTextField> {
 
   void startTimer(String text) {
     timer = Timer(const Duration(milliseconds: 600), () {
-      print('Typing finished: $text');
+      //print('Typing finished: $text');
     });
   }
 
