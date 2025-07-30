@@ -6,7 +6,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.2 <3.0.0'
+  sdk: ^3.8.1
 
 dependencies:
   flutter:
@@ -26,12 +26,11 @@ dependencies:
   path_provider: ^2.1.2
   # fast_rsa: ^3.6.1
   # openpgp: ^3.7.2
-  nfc_manager: ^3.5.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter_launcher_icons:
   android: true

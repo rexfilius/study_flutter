@@ -14,8 +14,6 @@ import 'package:study_flutter/screens/keyboard/keyboard_page.dart';
 import 'package:study_flutter/screens/keyboard2/keyboard_page2.dart';
 import 'package:study_flutter/screens/keyboard3/keyboard_page3.dart';
 import 'package:study_flutter/screens/keyboard4/keyboard_page4.dart';
-import 'package:study_flutter/screens/nfc_feature/nfc_logic2.dart';
-import 'package:study_flutter/screens/nfc_feature/nfc_page1.dart';
 import 'package:study_flutter/screens/progress_indicator/progress_indicator.dart';
 import 'package:study_flutter/screens/sliders/sliders_page.dart';
 import 'package:study_flutter/screens/switches/switches_page.dart';
@@ -40,5 +38,4 @@ Map<String, Widget Function(BuildContext)> appRoutesMap = {
   //RouteName.encrytionPage: (context) => const EncryptionPage(),
   //RouteName.encryption2Page: (context) => const Encryption2Page(),
   RouteName.pickerPage: (context) => const CupertinoPickerPage(),
-  RouteName.nfcPage: (context) => const NFCPage2()
 };
